@@ -31,14 +31,13 @@ public class Product {
         this.discount = newDiscount;
     }
 
-    public double calculateActualPrice(double regularPrice, double discount) {
-        double actualPriceResult = regularPrice - (regularPrice * discount);
-        return actualPriceResult;
+    public double calculateActualPrice() {
+        return regularPrice - (regularPrice * discount);
     }
 
     void print() {
         DecimalFormat formatInDecimal = new DecimalFormat("0.00");
         DecimalFormat formatPercentages = new DecimalFormat("#%");
-        System.out.println("Product: name = " + getName() + ", regular price = " + getRegularPrice() + " EUR, discount = " + formatPercentages.format(getDiscount()) + ", actual price = " + formatInDecimal.format(calculateActualPrice(regularPrice, discount)) + " EUR");
+        System.out.println("Product: name = " + getName() + ", regular price = " + getRegularPrice() + " EUR, discount = " + formatPercentages.format(getDiscount()) + ", actual price = " + formatInDecimal.format(calculateActualPrice()) + " EUR");
     }
 }
